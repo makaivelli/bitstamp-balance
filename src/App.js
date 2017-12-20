@@ -89,6 +89,13 @@ class App extends Component {
         req.end();
     }
 
+    ping() {
+        console.log('ping')
+        fetch('/ping').then((res) => {
+            console.log('pingres', res);
+        });
+    }
+
     getValue(currencyPair) {
         /*
         Options:
@@ -175,6 +182,7 @@ class App extends Component {
     componentWillMount() {
         this.getBalance();
         this.getValues();
+        this.ping();
     }
 
     render() {
